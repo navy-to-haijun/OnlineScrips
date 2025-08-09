@@ -1,0 +1,42 @@
+# 登录方式 telnet 或者 ssh
+login_method: ssh 
+
+# 控制器的用户名和密码
+username: root
+password: root
+
+
+# 上传文件的配置
+upfile:
+  upload_enabled:    true     # 是否启用上传文件功能
+  local_path: "./upfiles"     # 本地上传文件的路径
+  remote_path: "/"            # 远程上传文件的路径
+
+# 任务命令和检查关键字
+taskcommands:
+  - cmd: "cd /root && ls"           # 执行的命令
+    check: "task.sh"            # 检查输出中是否包含的关键字: 可以不存在
+  - cmd: "chmod 777 task.sh"
+  # - cmd: "./task.sh"
+  #   check: "complete"
+
+# 控制器是否需要检测重启
+reboot_params:
+  enable: false                           # 是否启用重启检测功能
+  wait_for_disconnect: 20                 # 等待断开最大时间，单位秒
+  disconnect_failure_threshold: 5         # 断开时，连续失败多少次判定断开成功
+  wait_for_connect: 60                    # 等待连接最大时间，单位秒
+  connect_success_threshold: 5            # 连接时，连续成功多少次判定连接成功
+
+
+# 检查命令和关键字
+checkcommands:
+
+
+
+# 控制器的主机列表
+hosts:
+  - 192.168.0.103
+  - 192.168.0.103
+
+  

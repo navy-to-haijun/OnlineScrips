@@ -1,0 +1,7 @@
+*.exe
+build/*
+upfiles/
+*.log
+config.yaml
+*.spec
+__pycache__/
